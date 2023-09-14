@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
+
+.home-content {
+	margin: 0% 8%;
+}
+
+.home-gallery {
+	margin: 30px 0px;
+	background-color: #f6f6f6;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	justify-content: center;
+	gap: 60px;
+	padding: 60px;
+	border-radius: 20px;
+}
+.card {
+	position: relative;
+
+	img {
+		object-fit: cover;
+		width: 100%;
+		border-radius: 7px;
+		aspect-ratio: 3/3;
+	}
+
+	.card-overlay {
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgb(0 0 0 / 69%) 95%);
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		height: 99%;
+		border-radius: 0px 0px 7px 7px;
+	}
+
+	h3 {
+		z-index: 1;
+		font-family: Montserrat;
+		width: 60%;
+		font-size: 1em;
+		font-weight: 400;
+		position: absolute;
+		color: white;
+		left: 4%;
+		bottom: 6%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.home-content {
+		margin: 0% 6%;
+	}
+}
+
+@media screen and (max-width: 809px) {
+	.home-gallery {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 20px;
+		background: none;
+		padding: 5px;
+	}
+	.card {
+		width: 100%;
+		img {
+			height: 255px;
+			aspect-ratio: 8/3;
+		}
+	}
+}
+
+@media screen and (min-width: 809px) {
+	.home-gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.home-gallery {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+		padding: 40px;
+	}
+}

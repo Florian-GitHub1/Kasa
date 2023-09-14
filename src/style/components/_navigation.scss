@@ -1,0 +1,78 @@
+@import '../settings.scss';
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 30px 8% 30px 8%;
+
+	img {
+		width: 155px;
+		height: 55px;
+	}
+
+	ul {
+		display: flex;
+		gap: 50px;
+	}
+
+	a {
+		text-decoration: none;
+		list-style-type: none;
+		font-size: 1.2em;
+		color: $primary-color;
+	}
+
+	.li_responsive-version {
+		font-size: 0.9em;
+		display: none;
+	}
+	.nav-active {
+		text-decoration: underline;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.navigation {
+		img {
+			width: 120px;
+			height: 40px;
+		}
+		ul {
+			gap: 20px;
+		}
+		.li_responsive-version {
+			display: flex;
+		}
+		.li_desktop-version {
+			display: none;
+		}
+	}
+}
+@media screen and (max-width: 570px) {
+	.navigation {
+		ul {
+			gap: 20px;
+		}
+	}
+}
+@media screen and (max-width: 480px) {
+	.navigation {
+		display: flex;
+		margin: 20px 7%;
+
+		img {
+			width: 96px;
+			height: 34px;
+		}
+
+		a {
+			font-size: 1em;
+		}
+
+		ul {
+			padding: 0;
+			gap: 12px;
+		}
+	}
+}

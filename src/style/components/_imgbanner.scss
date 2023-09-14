@@ -1,0 +1,93 @@
+.img-banner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		position: relative;
+		z-index: 0;
+		@include banner-img;
+	}
+
+	p {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+		z-index: 1;
+		font-size: 2.5rem;
+		position: absolute;
+		width: 85%;
+		color: white;
+
+		span {
+			color: white;
+		}
+	}
+}
+
+.img-overlay {
+	z-index: 1;
+	position: absolute;
+	@include banner-img;
+	width: 84%;
+	background-color: rgba(22, 22, 22, 0.199);
+}
+
+@media screen and (max-width: 800px) {
+	.home-banner {
+		img {
+			height: 150px;
+		}
+
+		p {
+			display: flex;
+			flex-direction: column;
+			font-size: 2.1rem;
+			padding-left: 30px;
+		}
+	}
+	.home-banner-overlay {
+		height: 150px;
+	}
+
+	.about-banner {
+		img {
+			height: 400px;
+		}
+	}
+
+	.about-banner-overlay {
+		height: 400px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.home-banner {
+		img {
+			height: 120px;
+		}
+
+		p {
+			font-size: 1.7rem;
+		}
+	}
+	.home-banner-overlay {
+		height: 120px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.about-banner {
+		img {
+			height: 290px;
+		}
+	}
+
+	.about-banner-overlay {
+		height: 290px;
+	}
+
+	.img-overlay {
+		width: 88%;
+	}
+}
