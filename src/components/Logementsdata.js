@@ -6,7 +6,6 @@ const Logementsdata = () => {
 
 	useEffect(() => {
 		setLogementsData(logements);
-		console.log(logements);
 	}, []);
 
 	return logementsData;

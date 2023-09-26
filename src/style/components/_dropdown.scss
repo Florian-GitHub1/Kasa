@@ -46,6 +46,7 @@ $primary-color: #ff6060;
 	padding: 10px;
 	border-radius: 5px;
 	background-color: $primary-color;
+	position: relative;
 	z-index: 2;
 
 	h1 {

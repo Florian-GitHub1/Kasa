@@ -11,10 +11,6 @@ const Housingcontent = () => {
 	const logement = logementsData.find((logement) => logement.id === id);
 	const [currentSlide, setCurrentSlide] = useState(0);
 
-	if (!logement) {
-		return <Error404 />;
-	}
-
 	const nextSlide = () => {
 		setCurrentSlide((prevSlide) => (prevSlide === logement.pictures.length - 1 ? 0 : prevSlide + 1));
 	};
@@ -22,6 +18,10 @@ const Housingcontent = () => {
 	const previousSlide = () => {
 		setCurrentSlide((prevSlide) => (prevSlide === 0 ? logement.pictures.length - 1 : prevSlide - 1));
 	};
+
+	if (!logement) {
+		return <Error404 />;
+	}
 
 	const hostnamearray = logement.host.name.split(' ');
 

@@ -1,0 +1,31 @@
+.about-content {
+	margin: 0% 8%;
+	.about-infos {
+		padding-top: 35px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.dropdown {
+			margin-bottom: 30px;
+			width: 85%;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.about-content {
+		.about-infos {
+			.dropdown {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.about-content {
+		margin: 2% 8%;
+	}
+}

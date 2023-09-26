@@ -12,22 +12,28 @@
 	}
 	p {
 		font-size: 1.5em;
+		margin: 2em 0 0 0;
+		font-weight: 500;
 	}
 	.return-home {
-		padding-top: 30px;
+		margin-top: 2.8em;
+		font-size: 1.2em;
 	}
 }
 
 @media screen and (max-width: 660px) {
 	.error404 {
 		h1 {
-			font-size: 5em;
+			font-size: 8em;
 		}
 
 		p {
-			font-size: 1em;
-			width: 85%;
+			font-size: 1.3em;
+			margin: 2em 0 0.4em 0.4em;
 			text-align: center;
+		}
+		.return-home {
+			font-size: 1em;
 		}
 	}
 }
