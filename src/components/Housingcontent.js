@@ -33,9 +33,9 @@ const Housingcontent = () => {
 					{logement.pictures.length > 1 && (
 						<>
 							<img className='arrow left-arrow' src='./img/left-arrow.png' alt='flèche vers la gauche' onClick={previousSlide} />
-							<img className='arrow right-arrow' src='./img/right-arrow.png' alt='flèche vers la droite' onClick={nextSlide} />
+							<img className='arrow right-arrow' src='./img/right-arrow.png' alt='flèche vers la droite' onClick={nextSlide} />{' '}
 							<span className='carrousel_slide-number'>
-								{currentSlide + 1}/{logement.pictures.length}
+								{currentSlide + 1}/{logement.pictures.length}{' '}
 							</span>
 						</>
 					)}
