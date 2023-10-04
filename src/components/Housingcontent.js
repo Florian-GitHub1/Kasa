@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Logementsdata from './Logementsdata';
+import Carrousel from './Carrousel';
 import Dropdown from './Dropdown';
 import Error404 from './Error404';
 import '../style/components/_housingcontent.scss';
@@ -9,15 +10,6 @@ const Housingcontent = () => {
 	const { id } = useParams();
 	const logementsData = Logementsdata();
 	const logement = logementsData.find((logement) => logement.id === id);
-	const [currentSlide, setCurrentSlide] = useState(0);
-
-	const nextSlide = () => {
-		setCurrentSlide((prevSlide) => (prevSlide === logement.pictures.length - 1 ? 0 : prevSlide + 1));
-	};
-
-	const previousSlide = () => {
-		setCurrentSlide((prevSlide) => (prevSlide === 0 ? logement.pictures.length - 1 : prevSlide - 1));
-	};
 
 	if (!logement) {
 		return <Error404 />;
@@ -27,20 +19,7 @@ const Housingcontent = () => {
 
 	return (
 		<div className='housing-content'>
-			<div className='carrousel-position'>
-				<div className='carrousel'>
-					<img className='current-img' src={logement.pictures[currentSlide]} alt='' />
-					{logement.pictures.length > 1 && (
-						<>
-							<img className='arrow left-arrow' src='./img/left-arrow.png' alt='flèche vers la gauche' onClick={previousSlide} />
-							<img className='arrow right-arrow' src='./img/right-arrow.png' alt='flèche vers la droite' onClick={nextSlide} />{' '}
-							<span className='carrousel_slide-number'>
-								{currentSlide + 1}/{logement.pictures.length}{' '}
-							</span>
-						</>
-					)}
-				</div>
-			</div>
+			<div className='carrousel-position'>{<Carrousel />}</div>
 			<div className='infos-position'>
 				<div className='logement-infos'>
 					<h1>{logement.title}</h1>
