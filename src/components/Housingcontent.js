@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import Logementsdata from './Logementsdata';
+import logements from '../logements.json';
 import Carrousel from './Carrousel';
 import Dropdown from './Dropdown';
 import Error404 from './Error404';
@@ -8,8 +8,9 @@ import '../style/components/_housingcontent.scss';
 
 const Housingcontent = () => {
 	const { id } = useParams();
-	const logementsData = Logementsdata();
-	const logement = logementsData.find((logement) => logement.id === id);
+	console.log('id:', id);
+	const logement = logements.find((logement) => logement.id === id);
+	console.log('logement', logement);
 
 	if (!logement) {
 		return <Error404 />;
@@ -19,7 +20,7 @@ const Housingcontent = () => {
 
 	return (
 		<div className='housing-content'>
-			<div className='carrousel-position'>{<Carrousel />}</div>
+			<Carrousel />
 			<div className='infos-position'>
 				<div className='logement-infos'>
 					<h1>{logement.title}</h1>
